@@ -6,5 +6,6 @@ package com.example.ar_pc.projectr;
 
 public interface IDataAwal {
     int getUsia();
-    void kirimData(int tinggi, int berat);
+    void gantiFragment();
+    void kirimData(int tinggi, int berat, int jk, int usia);
 }

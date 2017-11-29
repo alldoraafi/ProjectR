@@ -21,6 +21,7 @@ public class DataAwalFragment extends Fragment {
     private RadioGroup rgJK;
     private Button btAnalisa;
     private IDataAwal parent;
+    private int jk;
 
     @Nullable
     @Override
@@ -30,19 +31,33 @@ public class DataAwalFragment extends Fragment {
         etBerat = view.findViewById(R.id.etBerat);
         etTinggi = view.findViewById(R.id.etTinggi);
         rgJK = view.findViewById(R.id.rgJK);
+        rgJK.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (rgJK.getCheckedRadioButtonId()){
+                    case R.id.rbMale:jk = 1;break;
+                    case R.id.rbFemale:jk = 2;break;
+                }
+            }
+        });
+
+
         btAnalisa = view.findViewById(R.id.btAnalisa);
         btAnalisa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String tinggi = etTinggi.getText().toString();
                 String berat = etBerat.getText().toString();
+                parent.gantiFragment();
                 if (!TextUtils.isEmpty(tinggi) && !TextUtils.isEmpty(berat)){
-                    parent.kirimData(Integer.valueOf(etTinggi.getText().toString()),
-                            Integer.valueOf(etBerat.getText().toString()));
+                    parent.kirimData(
+                            Integer.valueOf(etTinggi.getText().toString()),
+                            Integer.valueOf(etBerat.getText().toString()),
+                            jk,
+                            Integer.valueOf(etUsia.getText().toString()));
                 }
             }
         });
-
         return view;
     }
 

@@ -14,18 +14,57 @@ import android.widget.TextView;
 
 public class AnalisisFragment extends Fragment {
     private View view;
-    private TextView text;
+    private TextView tvBBI, tvIMT, tvIMT2, tvKkal;
+    private double bbi, imt, kkal;
+    private String IMT;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        this.view = (View) inflater.inflate(R.layout.frag_analisis, container, false);
-        this.text = (TextView) this.view.findViewById(R.id.wow);
+        this.view = (View) inflater.inflate(R.layout.fragment_analisis, container, false);
+        this.tvBBI = (TextView) this.view.findViewById(R.id.tvBerat);
+        this.tvIMT = this.view.findViewById(R.id.tvIMT);
+        this.tvIMT2 = this.view.findViewById(R.id.tvIMT2);
+        this.tvKkal = this.view.findViewById(R.id.tvKkal);
         return this.view;
     }
 
-    public void setBerat(int tinggi, int berat){
-        double bbi = (tinggi-100)*0.9;
-        String g = text.getText().toString();
+    @Override
+    public void onStart() {
+        super.onStart();
+        this.tvBBI.setText(bbi + " kg");
+        this.tvIMT.setText(imt + "");
+        this.tvIMT2.setText(IMT);
+        this.tvKkal.setText(kkal+" kkal");
+    }
+
+    public void setBerat(int tinggi, int berat, int jk, int usia) {
+
+        //Rumus BBI
+        switch (jk) {
+            case 1:
+                if (tinggi < 160) this.bbi = tinggi - 100;
+                else this.bbi = (tinggi - 100) * 0.9;
+                kkal = 30 * this.bbi;
+                break;
+            case 2:
+                if (tinggi < 150) this.bbi = tinggi - 100;
+                else this.bbi = (tinggi - 100) * 0.9;
+                kkal = 25 * this.bbi;
+                break;
+        }
+
+        //Rumus Indeks Masa Tubuh
+        this.imt = berat / ((tinggi / 100) ^ 2);
+        if (imt < 18.5) IMT = "Underweight";
+        else if (imt < 22.9) IMT = "Normal";
+        else if (imt < 24.9) IMT = "Overweight";
+        else if (imt < 29.9) IMT = "Obesitas 1";
+        else IMT = "Obesitas 2";
+
+        //Rumus kkal
+        if (usia>70) kkal = kkal*0.8;
+        else if(usia>60) kkal = kkal*0.9;
+        else if(usia>40) kkal = kkal*0.95;
     }
 }

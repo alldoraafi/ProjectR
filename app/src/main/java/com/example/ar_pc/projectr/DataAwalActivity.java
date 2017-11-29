@@ -28,8 +28,13 @@ public class DataAwalActivity extends AppCompatActivity implements IDataAwal{
     }
 
     @Override
-    public void kirimData(int tinggi, int berat) {
+    public void gantiFragment() {
         fm.beginTransaction().replace(R.id.layout, fragAnalisis).commit();
-        fragAnalisis.setBerat(tinggi, berat);
+    }
+
+
+    @Override
+    public void kirimData(int tinggi, int berat, int jk, int usia) {
+        fragAnalisis.setBerat(tinggi, berat, jk, usia);
     }
 }
