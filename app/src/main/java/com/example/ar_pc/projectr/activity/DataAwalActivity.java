@@ -1,10 +1,15 @@
-package com.example.ar_pc.projectr;
+package com.example.ar_pc.projectr.activity;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class DataAwalActivity extends AppCompatActivity implements IDataAwal{
+import com.example.ar_pc.projectr.fragments.AnalisisFragment;
+import com.example.ar_pc.projectr.fragments.DataAwalFragment;
+import com.example.ar_pc.projectr.IDataAwal;
+import com.example.ar_pc.projectr.R;
+
+public class DataAwalActivity extends AppCompatActivity implements IDataAwal {
     private FragmentManager fm;
     private DataAwalFragment fragDataAwal;
     private AnalisisFragment fragAnalisis;

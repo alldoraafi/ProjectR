@@ -1,4 +1,4 @@
-package com.example.ar_pc.projectr;
+package com.example.ar_pc.projectr.fragments;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+
+import com.example.ar_pc.projectr.IDataAwal;
+import com.example.ar_pc.projectr.R;
 
 /**
  * Created by AR-PC on 11/29/2017.

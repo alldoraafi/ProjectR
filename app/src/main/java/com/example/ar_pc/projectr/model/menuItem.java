@@ -1,4 +1,4 @@
-package com.example.ar_pc.projectr;
+package com.example.ar_pc.projectr.model;
 /**
  * Created by AR-PC on 10/19/2017.
  */

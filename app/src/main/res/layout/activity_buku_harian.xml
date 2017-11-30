@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.ar_pc.projectr.GulaDarahActivity">
+    tools:context="com.example.ar_pc.projectr.activity.GulaDarahActivity">
 
     <TextView
         android:layout_width="match_parent"

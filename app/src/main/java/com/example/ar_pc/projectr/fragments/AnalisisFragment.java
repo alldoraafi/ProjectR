@@ -1,4 +1,4 @@
-package com.example.ar_pc.projectr;
+package com.example.ar_pc.projectr.fragments;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.ar_pc.projectr.R;
 
 /**
  * Created by AR-PC on 11/29/2017.

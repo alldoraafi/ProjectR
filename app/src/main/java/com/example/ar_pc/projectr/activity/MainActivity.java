@@ -1,9 +1,13 @@
-package com.example.ar_pc.projectr;
+package com.example.ar_pc.projectr.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.example.ar_pc.projectr.MenuAdapter;
+import com.example.ar_pc.projectr.R;
+import com.example.ar_pc.projectr.model.menuItem;
 
 import java.util.ArrayList;
 
